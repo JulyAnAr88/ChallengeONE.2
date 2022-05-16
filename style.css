@@ -1,0 +1,270 @@
+.grid {
+    display: grid;
+    grid-template-columns: [x0] 0.75fr [x1] 3fr [x2] 1fr [x3];
+    grid-template-rows: [y0] 0.75fr [y1] 3fr [y2] 1fr [y3] 0.5fr [y4];
+    justify-items: center;
+    align-items: center;
+    background: linear-gradient(#AAB2D5, #E9ECF8, #AAB2D5);
+  }
+
+  .header {
+
+    grid-column: x0 / x3;
+
+  }
+
+  .logo {
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+
+    position: absolute;
+    width: 120px;
+    height: 48px;
+    left: 35px;
+    top: 35px;
+}
+
+  
+.tablero {
+    
+    grid-column: x1 / x2;
+    grid-row: y1 / y2;
+    
+}
+  
+.content {
+    grid-column: x1 / x2;
+    grid-row: y2 / y3;
+}
+
+
+.botones{
+    display: flex;
+    width: 160px;
+    height: 30px;
+    border-radius: 24px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 18px;
+    text-align: center;
+
+    display: flex;
+    /*flex-direction: row;
+    align-items: flex-start;
+    
+
+    position: relative;
+    padding: 0px;
+    left: 180px;
+    top: 435px;*/
+
+    cursor: pointer;
+}
+/*
+.botones{
+    
+}*/
+
+.botones-0{
+  
+    position: static;
+    
+    left: 0px;
+    top: 0px;
+
+    padding: 0px;
+
+    /* Dark blue/dark-blue-300 */
+    background: #0A3871;
+  
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 0px;
+    
+    color: white;
+        
+}
+
+.botones-1{
+
+    position: static;
+    
+    left: 352px;
+    top: 0px;
+
+    /* Light gray */
+    background: #D8DFE8;
+
+    /* Dark blue/dark-blue-300 
+    border: 1px solid #0A3871;*/
+    box-sizing: border-box;
+    
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 0px 24px;
+    
+    font-weight: 400;   
+    line-height: 19px;
+    
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+    margin: 0px 10px;
+
+}
+
+.campo-medio {
+    display: flex;
+    position: absolute;
+    width: 577px;
+    height: 48px;
+    left: 180px;
+    top: 168px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 150%;
+
+    border-style: none;
+    background: none;
+    
+    color: #0A3871;
+}
+
+.pizarra{
+    display: flex;
+    position: absolute;
+    width: 200px;
+    height: 150px;
+    left: 0px;
+    top: 0px;
+}
+
+
+/*.page-2{
+    display:none;
+    visibility:hidden;
+
+}
+
+/*.page-3{
+    display:grid;
+    visibility:hidden;
+}*/
+  
+
+
+
+
+
+
+.aviso-prohibidos{
+    position: static;
+    width: 205px;
+    height: 18px;
+    left: 24px;
+    top: 0px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+
+    /* identical to box height, or 18px */
+
+    /* Gray/gray-400 */
+    color: #495057;
+
+    opacity: 0.8;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 0px 8px;
+
+    visibility:hidden;
+
+
+}
+
+.exclamacion{
+    position: static;
+    width: 16px;
+    height: 16px;
+    left: 0px;
+    top: 1px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 8px;
+
+    visibility:hidden;
+
+}
+
+
+.footer {
+    
+    grid-column: x0 / x3;
+    grid-row: y3/y4;
+}
+
+.copyright {
+    font-size: 13px;
+    margin: 15px 0px 40px 0px;
+}
+
+.profile-INSTAGRAM {
+    background-image: url("img/icon-instagram-big.svg");
+    background-size: 30px 30px;
+}
+
+.profile-LINKEDIN {
+    background: url("img/icon-linkedin-big.svg");
+    background-size: 24px 24px;
+}
+
+.profile-TWITTER {
+    background-image: url("img/icon-twitter-big.svg");
+    background-size: 30px 30px;
+}
+
+.profile-GITHUB {
+    background-image: url("img/icon-github-big.svg");
+    background-size: 30px 30px;
+}
+
+.profile-description {
+    display: none;
+}
+
+.profile-link {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-position: 50%;
+    padding: 5px;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+
+
+@media screen and (max-width:480px){
+
+    /*para hacerlo responsive más adelante*/
+}
