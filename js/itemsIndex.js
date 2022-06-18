@@ -7,15 +7,7 @@ var page3 = document.querySelectorAll(".page-3");
 botonStart.addEventListener("click", function (event) {
     event.preventDefault();
 
-    page1.forEach(function(userItem) {
-        
-        userItem.style.visibility = "hidden";
-      });
-    page3.forEach(function(userItem) {
-        
-        userItem.style.visibility = "visible";
-        userItem.display = "grid";
-      });
+    gameStart();
 
 })
 

@@ -7,13 +7,19 @@
     background: linear-gradient(#AAB2D5, #E9ECF8, #AAB2D5);
   }
 
-  .header {
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Shippori+Antique+B1&display=swap');
+* {
+    font-family: 'Inter';
+    font-style: normal;
+}
+
+.header {
 
     grid-column: x0 / x3;
 
-  }
+}
 
-  .logo {
+.logo {
 
     display: flex;
     flex-direction: column;
@@ -26,7 +32,6 @@
     left: 35px;
     top: 35px;
 }
-
   
 .tablero {
     
@@ -40,89 +45,75 @@
     grid-row: y2 / y3;
 }
 
-
-.botones{
+.center {
     display: flex;
-    width: 160px;
-    height: 30px;
-    border-radius: 24px;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-size: 18px;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+}
 
-    display: flex;
-    /*flex-direction: row;
-    align-items: flex-start;
+.grupo-botones{
     
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
 
     position: relative;
-    padding: 0px;
-    left: 180px;
-    top: 435px;*/
-
-    cursor: pointer;
+    width: 650px;
+    height: 67px;
 }
-/*
+
+
 .botones{
+    font-size: 16px;
+    border-radius: 24px;
+    border: 1px solid;
+    height: 50px;
+    text-decoration: none;
+    text-align: center;
+    width: 55%;
+    outline: none;
     
-}*/
+    box-sizing: border-box;
+    
+    cursor: pointer;
+    
+    position: relative;
+    align-items: flex-start;
+}
+
 
 .botones-0{
   
-    position: static;
-    
-    left: 0px;
-    top: 0px;
-
-    padding: 0px;
-
-    /* Dark blue/dark-blue-300 */
     background: #0A3871;
-  
-    /* Inside auto layout */
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-    margin: 0px 0px;
-    
     color: white;
         
 }
 
 .botones-1{
 
-    position: static;
-    
-    left: 352px;
-    top: 0px;
-
-    /* Light gray */
+    position: static;    
     background: #D8DFE8;
-
-    /* Dark blue/dark-blue-300 
-    border: 1px solid #0A3871;*/
     box-sizing: border-box;
     
-    /* Inside auto layout */
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-    margin: 0px 24px;
-    
-    font-weight: 400;   
-    line-height: 19px;
-    
-    flex: none;
-    order: 0;
-    flex-grow: 1;
-    margin: 0px 10px;
-
+}
+/*
+.botones-0:hover {
+    background-color: #072B61; 
+    box-shadow: 0px 20px 20px -8px #343A40;
+    color: white;
+    font-size: 21px;
 }
 
+
+
+.botones-1:hover {
+    background-color: #EFF1FA; 
+    box-shadow: 0px 20px 20px -8px #343A40;
+    font-size: 21px;
+}*/
+
 .campo-medio {
-    display: flex;
     position: absolute;
     width: 577px;
     height: 48px;
@@ -141,13 +132,28 @@
     color: #0A3871;
 }
 
-.pizarra{
-    display: flex;
-    position: absolute;
-    width: 200px;
-    height: 150px;
-    left: 0px;
-    top: 0px;
+.correctWord {
+    margin: 30px;
+    height: 30px;
+    list-style: none;
+}
+
+.correctWord li {
+    float: left;
+    width: 80px;
+    height: 60px;
+    font-size: 48px;
+    color: #0A3871;
+    margin: 0 30px 0 30px;
+    border-bottom: solid 4px #0A3871;
+}
+
+#wrongWord {
+    text-align: center;
+    font-weight: 400px;
+    font-size: 24px;
+    color: #0A3871;
+    height: 30px;
 }
 
 
@@ -163,8 +169,74 @@
 }*/
   
 
+.keyboard {
+    background: transparent;
+    color: #E5E5E5;
+    outline: none;
+    border: none;
+    display: none;
+}
 
+.btn-keyboard {
+    float: right;
+    border: none;
+    background-color: transparent;
+    color: #AAB2D5;
+    display: none;
+}
 
+.btn-keyboard svg {
+    height: 20px;
+    width: 20px;
+    border: none;
+    outline: none;
+}
+
+.btn-keyboard:hover {
+    color: #0A3871;
+}
+
+/* popup */
+
+.background-popup {
+    position: fixed;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup {
+    color: #AAB2D5;
+    width: 30%;
+    padding: 2%;
+    border-radius: 17px;
+    background-color: #EAFAF1;
+    position: relative;
+    margin: 20% auto;
+    transition: all 5s ease-in-out;
+    text-align: center;
+}
+
+#closePopup {
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+    transition: all 200ms;
+    border-radius: 100px;
+    border: none;
+    outline: none;
+    background-color: #AAB2D5;
+}
+
+#closePopup:hover {
+    color: #EAFAF1;
+}
 
 
 

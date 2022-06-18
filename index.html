@@ -5,14 +5,32 @@
     <head>
 
         <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Julián Aragón">
         <title>Juego del ahorcado - Alura challenge</title>
-
         <link rel="stylesheet" href="reset.css">
         <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" href="img/Logo.ico" type="image/svg">
     
     </head>
 
     <body>
+        <input type="text" id="keyboard" class="keyboard">
+        <button onclick="document.getElementById('keyboard').focus();" class="btn-keyboard">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#8ECC53" class="bi bi-keyboard-fill" viewBox="0 0 16 16">
+            <path d="M0 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6zm13 .25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5a.25.25 0 0 0-.25.25zM2.25 8a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 3 8.75v-.5A.25.25 0 0 0 2.75 8h-.5zM4 8.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 5 8.75v-.5A.25.25 0 0 0 4.75 8h-.5a.25.25 0 0 0-.25.25zM6.25 8a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 7 8.75v-.5A.25.25 0 0 0 6.75 8h-.5zM8 8.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 9 8.75v-.5A.25.25 0 0 0 8.75 8h-.5a.25.25 0 0 0-.25.25zM13.25 8a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5zm0 2a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5zm-3-2a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h1.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-1.5zm.75 2.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5a.25.25 0 0 0-.25.25zM11.25 6a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5zM9 6.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5A.25.25 0 0 0 9.75 6h-.5a.25.25 0 0 0-.25.25zM7.25 6a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 8 6.75v-.5A.25.25 0 0 0 7.75 6h-.5zM5 6.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 6 6.75v-.5A.25.25 0 0 0 5.75 6h-.5a.25.25 0 0 0-.25.25zM2.25 6a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h1.5A.25.25 0 0 0 4 6.75v-.5A.25.25 0 0 0 3.75 6h-1.5zM2 10.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5a.25.25 0 0 0-.25.25zM4.25 10a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h5.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-5.5z"/>
+          </svg>
+        </button>
+
+        <!---Popup--->
+    <section class="background-popup" id="popupMessages" style="display: none;">
+        <div class="popup">
+            <button id="closePopup" onclick="popup(false)">X</button>
+            <div>
+                <div id="popupAlert">Hello world</div>
+            </div>
+        </div>
+    </section>
 
         <main>
             
@@ -20,13 +38,12 @@
                 <div class="header"><img class ="logo" src="img/Logo.png" alt="Logo de Alura"></div>
 
                 <div class="tablero">
-                    <div class = botones> 
-                        <div class = botones-0>
-                          <button id="start" class="page-1 boton-start" onclick= "location.href='PagePlay.html'">Iniciar juego</button>
-                        </div>
-                        <div class = botones-1>
-                            <button id="add" class="page-1 boton-add" onclick= "location.href='PageAdd.html'">Agregar nueva palabra</button> 
-                        </div>
+                    <div class = grupo-botones> 
+                        
+                          <button id="start" class="botones botones-0" onclick= "init(), location.href='PagePlay.html'">Iniciar juego</button>
+                       
+                            <button id="add" class="botones botones-1" onclick= "location.href='PageAdd.html'">Agregar nueva palabra</button> 
+                        
                     </div>
 
 
@@ -81,8 +98,7 @@
         <script src = "js/itemsIndex.js"></script>
         <script src = "js/itemsPageAdd.js"></script>
         <script src = "js/itemsPagePlay.js"></script>
-        <script src = "/PageAdd.html"></script>
-        <script src = "/PagePlay.html"></script>
+        <script src = "js/htmlDOM.js"></script>
 
 
     </body>
