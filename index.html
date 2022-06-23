@@ -22,39 +22,71 @@
           </svg>
         </button>
 
-        <!---Popup--->
-    <section class="background-popup" id="popupMessages" style="display: none;">
-        <div class="popup">
-            <button id="closePopup" onclick="popup(false)">X</button>
-            <div>
-                <div id="popupAlert">Hello world</div>
+    <!---Popup--->
+        <section class="background-popup" id="popupMessages" style="display: none;">
+            <div class="popup">
+                <button id="closePopup" onclick="popup(false)">X</button>
+                <div>
+                    <div id="popupAlert">Hello world</div>
+                </div>
             </div>
-        </div>
-    </section>
-
-        <main>
-            
-            <div class="grid">
-                <div class="header"><img class ="logo" src="img/Logo.png" alt="Logo de Alura"></div>
-
+        </section>
+    <!---Main Document--->
+        <main class="grid">
+        <div class="header"><img class ="logo" src="img/Logo.png" alt="Logo de Alura"></div>
+    <!--Page 1: Main Game--->
+        <div class="page_1 center">            
                 <div class="tablero">
                     <div class = grupo-botones> 
                         
                           <button id="start" class="botones botones-0" onclick= "init(), location.href='PagePlay.html'">Iniciar juego</button>
                        
-                            <button id="add" class="botones botones-1" onclick= "location.href='PageAdd.html'">Agregar nueva palabra</button> 
+                            <button id="add" class="botones botones-1" onclick= "pageChandler('.page_2')">Agregar nueva palabra</button> 
                         
                     </div>
 
+                </div>
+                <div class="content">
+                    
+                </div>
+        </div>
+    <!--Page 2: Add Word--->
+        <div class="page_2" style="display:none">
+            <div class="grid">
+                <div class="tablero">
+                    
+                    <input id="texto" name="textBox" type="text" placeholder="Ingrese la palabra a agregar" 
+                    class="page_2 campo-medio" autofocus>
 
                 </div>
 
-
                 <div class="content">
-                    
+
+                    <div class = grupo-botones> 
+
+                        <div class = >
+                            
+                            <button id="save" class="botones botones-0" onclick= "location.href='PagePlay.html'">Guardar y empezar</button>                                
+                            <button id="cancel" class="botones botones-1" onclick= "location.href='index.html'">Cancelar</button>
+   
+                        <div class = mensaje-prohibidos>
+            
+                            <label id= "prohibidos" class = "page_2 aviso-prohibidos">Solo letras minúsculas y sin acentos</label>
+                            
+                            <img class ="page_2 exclamacion" src="img/exclamation-circle-fill.png" alt="Signo de exclamación">
+                        </div>
+    
                     </div>
 
-                <div class="footer">
+                    </div>
+        </div>
+
+    <!--Page 3: Game--->
+
+
+
+
+                <div class="footer center">
                     <div class="profile">
 
                         <a class="profile-link profile-TWITTER" href="https://twitter.com/julyaragorn" rel="noopener nofollow" target="_blank">
@@ -88,18 +120,12 @@
                     </div>
 
                 </div>
-              </div>
-
-        
-
-
-        </main>
+        </main>        
 
         <script src = "js/itemsIndex.js"></script>
         <script src = "js/itemsPageAdd.js"></script>
         <script src = "js/itemsPagePlay.js"></script>
         <script src = "js/htmlDOM.js"></script>
-
 
     </body>
 
