@@ -8,13 +8,9 @@ var stroke = 4;
 var x = 100;
 var y = 350;   
 
-window.addEventListener("load", function canvasSettings() {
-    
-    load();
-});
 
 function load(){
-    init();
+    //init();
     canva.width = 750;
     canva.height = 400;
     cargarFondo(canva.width, canva.height)

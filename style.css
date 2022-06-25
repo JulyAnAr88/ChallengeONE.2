@@ -2,51 +2,16 @@ body {
     background: linear-gradient(#AAB2D5, #E9ECF8, #AAB2D5);
     width: 98%;
 }
-
-.grid {
-    display: grid;
-    grid-template-columns: [x0] 0.75fr [x1] 3fr [x2] 1fr [x3];
-    grid-template-rows: [y0] 0.75fr [y1] 3fr [y2] 1fr [y3] 0.5fr [y4];
-    justify-items: center;
-    align-items: center;
-    
-  }
-
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Shippori+Antique+B1&display=swap');
 * {
     font-family: 'Inter';
     font-style: normal;
 }
 
-.header {
-
-    grid-column: x0 / x3;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    margin-left: 0%;
-
-    width: 520px;
-    height: 48px;
-
-}
-
-/*.logo {
-
-    
-}*/
-  
-.tablero {
-    
-    grid-column: x1 / x2;
-    grid-row: y1 / y2;
-    
-}
-  
-.content {
-    grid-column: x1 / x2;
-    grid-row: y2 / y3;
+.logo {
+    height: 50px;
+    margin: 10px;
+    padding: 5px;
 }
 
 .center {
@@ -55,18 +20,6 @@ body {
     align-items: center;
     text-align: center;
 }
-
-/*.grupo-botones{
-    
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 0px;
-
-    position: relative;
-    width: 650px;
-    height: 67px;
-}*/
-
 
 .botones{
     font-size: 16px;
@@ -82,85 +35,38 @@ body {
     
     cursor: pointer;
     
-    position: relative;
     align-items: flex-start;
 }
 
-
-.botones-0{
-  
+.boton-0{
     background: #0A3871;
     color: white;
-        
 }
 
-.botones-1{
-
+.boton-1{
     position: static;    
     background: #D8DFE8;
     box-sizing: border-box;
-    
 }
 
-.botones-0:hover {
+.boton-0:hover {
     background-color: #072B61; 
     box-shadow: 0px 20px 20px -8px #343A40;
     color: white;
     font-size: 21px;
 }
 
-.botones-1:hover {
+.boton-1:hover {
     background-color: #EFF1FA; 
     box-shadow: 0px 20px 20px -8px #343A40;
     font-size: 21px;
 }
 
-.campo-medio {
-    position: absolute;
-    width: 577px;
-    height: 48px;
-    left: 180px;
-    top: 168px;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 25px;
-    line-height: 150%;
-
-    border-style: none;
-    background: none;
-    
-    color: #0A3871;
-}
-
-.correctWord {
-    margin: 30px;
-    height: 30px;
-    list-style: none;
-}
-
-.correctWord li {
-    float: left;
-    width: 80px;
-    height: 60px;
-    font-size: 48px;
-    color: #0A3871;
-    margin: 0 30px 0 30px;
-    border-bottom: solid 4px #0A3871;
-}
-
-#wrongWord {
-    text-align: center;
-    font-weight: 400px;
-    font-size: 24px;
-    color: #0A3871;
-    height: 30px;
-}
+/*Page 1: Main menu*/
 
 .page_1 {
-    margin-top: 50%;
-    margin-left: 100%;
+    margin-top: 10%;
+    margin-bottom: 10%;
 }
 
 .page_1 .grupo-botones div {
@@ -178,30 +84,122 @@ body {
     width: 317px;
 }
 
-.page_1 .botones-0 {
+.page_1 .boton-0 {
     height: 95px;
 }
 
-.page_2 .grupo-botones div {
-    margin: 20px;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 0px;
+/*Page 2: Menu add Word*/
 
-    position: relative;
-    width: 650px;
-    height: 67px;
-}
-
-/*.page_2{
+.page_2{
     margin: 0 25% 0 25%;
 }
 
-.page-3{
-    display:grid;
-    visibility:hidden;
-}*/
-  
+.page_2 .input {
+    font-size: 32px;
+    border: none;
+    outline: none;
+    margin-top: 20px;
+    height: 344px;
+    width: 100%;
+    resize: none;
+}
+
+.page_2 .botones {
+    width: 30%;
+    margin: 10px;
+}
+
+.page_2 .mensaje-prohibidos {
+    text-align: left;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 150%;
+
+    color: #495057;
+
+    opacity: 0.8;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 10px 0px 10px 0px;
+}
+
+#texto{
+    width: 577px;
+    height: 48px;
+    left: 180px;
+    top: 168px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 150%;
+
+    border-style: none;
+    background: none;
+    
+    color: #0A3871;
+}
+
+.exclamacion{
+    position: static;
+    width: 16px;
+    height: 16px;
+    left: 0px;
+    top: 1px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 8px;
+}
+
+/* Page 3: game*/
+
+.page_3 canvas {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.page_3 .correctWord {
+    margin: 30px;
+    height: 30px;
+    list-style: none;
+}
+
+.page_3 .correctWord li {
+    float: left;
+    width: 80px;
+    height: 60px;
+    font-size: 48px;
+    color: #0A3871;
+    margin: 0 30px 0 30px;
+    border-bottom: solid 4px #0A3871;
+}
+
+#wrongWord {
+    text-align: center;
+    font-weight: 400px;
+    font-size: 24px;
+    color: #0A3871;
+    height: 45px;
+    padding-top: 20px;
+}
+
+.page_3 .botones {
+    width: 30%;
+    margin: 10px;
+}
+
+/*Touch Keyboard*/
 
 .keyboard {
     background: transparent;
@@ -272,61 +270,10 @@ body {
     color: #EAFAF1;
 }
 
+/*Footer document*/
 
-
-.aviso-prohibidos{
-    position: static;
-    width: 205px;
-    height: 18px;
-    left: 24px;
-    top: 0px;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 150%;
-
-    /* identical to box height, or 18px */
-
-    /* Gray/gray-400 */
-    color: #495057;
-
-    opacity: 0.8;
-
-    /* Inside auto layout */
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-    margin: 0px 8px;
-
-    visibility:hidden;
-
-
-}
-
-.exclamacion{
-    position: static;
-    width: 16px;
-    height: 16px;
-    left: 0px;
-    top: 1px;
-
-    /* Inside auto layout */
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-    margin: 0px 8px;
-
-    visibility:hidden;
-
-}
-
-
-.footer {
-    
-    grid-column: x0 / x3;
-    grid-row: y3/y4;
+.profile {
+    margin-top: 2.5%;
 }
 
 .copyright {
@@ -372,5 +319,58 @@ body {
 
 @media screen and (max-width:480px){
 
-    /*para hacerlo responsive más adelante*/
+    /*Page 1: Main Page*/
+    .page_1 {
+        margin-top: 30%;
+    }
+    .page_1 .btn-primary {
+        height: 100px;
+    }
+    /*Page 2: Register Word*/
+    .page_2 {
+        margin: 0% 3% 0% 3%;
+    }
+    header {
+        margin-top: 8%;
+    }
+    .page_2 .input {
+        margin-top: 10%;
+        height: 234px;
+    }
+    .page_2 .group-botones {
+        margin-top: 60%;
+    }
+    #texto{
+        width: 377px
+    }
+    /*Page 3: Game*/
+    .page_3 {
+        margin-top: 50px;
+    }
+    .page_3 canvas {
+        width: 385px
+    }
+    .page_3 .displayUser {
+        margin-top: 7%;
+        margin-bottom: 10%;
+    }
+    .page_3 .wrongWord {
+        margin: 7% 0 0 0;
+    }
+    .page_3 .botones {
+        width: 90%;
+    }
+    .page_3 .group-botones {
+        display: block !important;
+    }
+    /*Footer Movile*/
+    footer .profile {
+        padding: 20px;
+        margin-top: 7%;
+    }
+    footer .profile a {
+        margin: 3px;
+    }
+
+    
 }

@@ -13,54 +13,10 @@ var palabraCorrecta = "";
 var touchDevice = false;
 var display = window.innerWidth;
 
-if (display < 900) {
+if (display < 750) {
     touchDevice = true;
 }
 
-
-desist.addEventListener("click", function (event) {
-    event.preventDefault();
-
-    page3.forEach(function(userItem) {
-        userItem.style.visibility = "hidden";
-      });
-    page1.forEach(function(userItem) {        
-        userItem.style.visibility = "visible";
-      });
-    
-})
-
-botonNew.addEventListener("click", function (event) {
-    event.preventDefault();
-    load();
-    element.textContent = " ";
-    /*word = secretWord();
-    makeGuiones(word.length);   */     
-})
-
-function secretWord() {
-
-  let nro = Math.trunc((Math.random()*100) % words.length);  
-  return words[nro];
-}
-
-
-function init() {
-    endGame();
-    gameState = true;
-    /*element.textContent = " ";*/
-
-}
-
-  
-function endGame() {
-  word = null;
-  palabraCorrecta = null;
-  intentos = ["", ""];
-  gameState = false;
-}
-
-  
 controlTouch.addEventListener("input", function(event) {
     if (touchDevice) {
         if (gameState) {
@@ -73,8 +29,9 @@ controlTouch.addEventListener("input", function(event) {
 });
 
 document.addEventListener('keydown', function gameController(event) {
-      if (!touchDevice) {
+    if (!touchDevice) {
         var specialKeyPress = teclasEspeciales(event['key'].toLowerCase());
+        console.log(event['key']);
         if (!specialKeyPress) {
             if (gameState) {
                 document.querySelector("#keyboard").value = event['key'];
@@ -88,28 +45,48 @@ document.addEventListener('keydown', function gameController(event) {
     }
 });
 
+function secretWord() {
+
+  let nro = Math.trunc((Math.random()*100) % words.length);  
+  return words[nro];
+}
+
+function init() {
+    endGame();
+    gameState = true;
+    pageChandler('.page_3');
+    load();
+    element.textContent = " ";
+
+}
+  
+function endGame() {
+  word = null;
+  palabraCorrecta = null;
+  intentos = ["", ""];
+  gameState = false;
+}
+
 function gameExecution(correcta, key) {
   if (gameState) {
       var text = "";
-      
-          if (correcta) {
-              
-              agregarLetraCorrecta(word.indexOf(key.toUpperCase()));
-              for (var i = 0; i < word.length; i++) {
-                  if(word[i]==key.toUpperCase()){
-                    escribirLetraCorrecta(word, i);
-                    text = text + key;              
-                  }
-              }
-              regLetters(text, 0);
-          } else {
-              regLetters(key, 1);
-              element.textContent = (intentos[1].toUpperCase());
-              graphDrawing(intentos[1].length);
-          }
+      if (correcta) {
+        agregarLetraCorrecta(word.indexOf(key.toUpperCase()));
+        for (var i = 0; i < word.length; i++) {
+            if(word[i]==key.toUpperCase()){
+                escribirLetraCorrecta(word, i);
+                text = text + key;              
+            }
+        }
+        regLetters(text, 0);
+        } else {
+            regLetters(key, 1);
+            element.textContent = (intentos[1].toUpperCase());
+            graphDrawing(intentos[1].length);
+        }
       
       if (intentos[1].length == 9) {
-          popup("<h3><span>&#128531;</span>¡Perdiste! Vuelve a intentarlo</h3>");
+          popup("<h3><span>&#128531;</span> ¡Perdiste! Vuelve a intentarlo</h3>");
           endGame();
           playSound(sounds[2]);
       }
@@ -127,7 +104,7 @@ function agregarLetraCorrecta(i){
 
 function isRightLetter(consulta) {
     var correcta = false;
-    if (verificarCaracteres(consulta)) {
+    if (!verificarCaracteres(consulta)) {
         for (var i = 0; i < word.length; i++) {
             if (consulta == word[i]) {
                 if (word[i] != intentos[0]) {
@@ -143,7 +120,7 @@ function teclasEspeciales(consulta) {
   var tecla = false;
   var specialKeys = ['contextmenu', 'control', 'tab', 'capslock', 'shift', 'alt', 'altgraph', 'enter', 'meta', 'dead', 'backspace', 'home', 'end', 'delete', 'pageup', 'pagedown', 'arrowup', 'arrowdown', 'arrowleft', 'arrowright', 'numlock', 'escape', 'pause', 'insert', 'scrolllock', 'f1', 'f2', 'f3', 'f4', 'f5', 'f6', 'f7', 'f8', 'f9', 'f10', 'f11', 'f12'];
   for (var i = 0; i < specialKeys.length; i++) {
-      if (consulta == specialKeys[i]) {
+      if (consulta == specialKeys[i] || verificarCaracteres(consulta)) {
           tecla = true;
       }
   }
@@ -151,10 +128,10 @@ function teclasEspeciales(consulta) {
 }
 
 function verificarCaracteres(letra) {
-    var filter = '1234567890=@.;?¿!¡|"[]<>, ';
-    var response = true;
-    if (filter.indexOf(letra.charAt()) != -1) {
-        response = false;
+    var re = /[^a-zñA-ZÑ]/;
+    var response = false;
+    if (re.test(letra.charAt())) {
+        response = true;
     }
     return response
 }
