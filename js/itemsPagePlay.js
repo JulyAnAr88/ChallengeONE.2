@@ -21,7 +21,7 @@ controlTouch.addEventListener("input", function(event) {
     if (touchDevice) {
         if (gameState) {
             var key = event['data'];
-            var request = isRightLetter(key.toLowerCase());
+            var request = isRightLetter(key.toUpperCase());
             gameExecution(request, key.toLowerCase());
             cleanInput("#keyboard");
         }
@@ -37,7 +37,7 @@ document.addEventListener('keydown', function gameController(event) {
                 document.querySelector("#keyboard").value = event['key'];
                 var key = document.querySelector("#keyboard").value;
                 var esCorrecta = isRightLetter(key.toUpperCase());
-                gameExecution(esCorrecta, key);
+                gameExecution(esCorrecta, key.toLowerCase());
                 cleanInput("#keyboard");
             }
         }
