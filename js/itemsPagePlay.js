@@ -1,5 +1,3 @@
-var botonDesistir = document.querySelector("#desist");
-var botonNew = document.querySelector("#new");
 var controlTouch = document.querySelector("#keyboard");
 var element = document.querySelector("#wrongWord");
 var pantalla = document.querySelector("canvas");
@@ -18,6 +16,8 @@ if (display < 750) {
 }
 
 controlTouch.addEventListener("input", function(event) {
+    console.log(event['key']);
+    console.log(touchDevice);
     if (touchDevice) {
         if (gameState) {
             var key = event['data'];

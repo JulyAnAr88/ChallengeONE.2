@@ -363,6 +363,13 @@ body {
     .page_3 .group-botones {
         display: block !important;
     }
+    .keyboard {
+        display: block;
+    }
+    .btn-keyboard {
+        display: block;
+    }
+    
     /*Footer Movile*/
     footer .profile {
         padding: 20px;
