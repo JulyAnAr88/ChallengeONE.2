@@ -16,8 +16,6 @@ if (display < 750) {
 }
 
 controlTouch.addEventListener("input", function(event) {
-    console.log(event['key']);
-    console.log(touchDevice);
     if (touchDevice) {
         if (gameState) {
             var key = event['data'];
